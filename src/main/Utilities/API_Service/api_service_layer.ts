@@ -11,8 +11,8 @@ export class CRUD_UserDetails{
         this.baseURL = 'https://reqres.in';
 
     }
+    // Sends API requests to create multiple users with given details
     async createNewUserDetails(request) {
-
         const users = [
             {
                 id: 1,
@@ -49,9 +49,10 @@ export class CRUD_UserDetails{
                 }
             );
     
-            console.log("USER DATA IS CREATED ... ");
+            console.log("NEW USER DATA IS CREATED ... ");
         }
     }
+    // Fetches all user records from the API
     async fetchUserDetails(request){
         const response = await request.get(
             `${this.baseURL}/api/collections/finacplus-api/records?project_id=13872`,
@@ -66,6 +67,7 @@ export class CRUD_UserDetails{
         const users = json.data.map(record => record.data);
         console.log(users);
     }
+    // Updates an existing user's details via API request
     async updateExistingUserDetails(request){
         const response = await request.post(`${this.baseURL}/api/collections/finacplus-api/records?project_id=13872`,{
             headers: {
