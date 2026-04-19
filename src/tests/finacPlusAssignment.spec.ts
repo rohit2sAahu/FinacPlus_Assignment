@@ -15,6 +15,5 @@ test('FinacPlus API Assignment',async({page,request})=>{
     const obj=  new CRUD_UserDetails(page);
     await obj.createNewUserDetails(request);
     await obj.updateExistingUserDetails(request);
-
     await obj.fetchUserDetails(request);
 })
